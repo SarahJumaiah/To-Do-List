@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    min-height: 100vh; /*ensures that the container will always be at least as tall as the viewport height*/
+    background: linear-gradient(157deg, rgba(161,209,226,1) 18%, rgba(235,215,128,1) 52%, rgba(221,137,219,1) 100%);
+    padding: 10px;
+}
+.todo-app {
+    width: 100%; /* The container will take up the full width of its parent element */
+    max-width: 540px; /* The container's width will not exceed 540 pixels, ensuring it stays within a reasonable size */
+    background: #fff; /* Sets the background color of the container to white */
+    margin: 100px auto 20px; /* Adds margin around the container: 100px on top, auto on the left and right to center it horizontally, and 20px on the bottom */
+    padding: 40px 30px 70px; /* Adds padding inside the container: 40px on top, 30px on the left and right, and 70px on the bottom */
+    border-radius: 15px;
+}
+.todo-app h2 {
+    color: #0f3890; /* Sets the text color to a purple shade */
+    display: flex; /* Applies flexbox layout to the <h2> element */
+    align-items: center; /* Aligns the child elements vertically in the center */
+    margin-bottom: 20px; /* Adds a 20px margin below the <h2> element */
+}
+.todo-app h2 img{
+    width: 30px;
+    margin-left: 10px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-weight: 14px;
+}
+button{
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background-color: #2055b7;
+    color:#fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+ul li {
+    list-style: none; /* Removes the default list bullet */
+    font-size: 17px; /* Sets the font size of the list items */
+    padding: 12px 8px 12px 50px; /* Adds padding: 12px top and bottom, 8px right, and 50px left */
+    user-select: none; /* Prevents the text from being selected by the user */
+    cursor: pointer; /* Changes the cursor to a pointer, indicating the item is clickable */
+    position: relative; /* Positions the list item relative to its normal position, allowing absolute positioning of child elements */
+}
+ul li::before { /*pseudo-element= Inserts content before the content of an element.*/
+    content: ''; /* Inserts an empty content element before the list item */
+    position: absolute; /* Positions the pseudo-element absolutely within the list item */
+    height: 28px; /* Sets the height of the pseudo-element */
+    width: 28px; /* Sets the width of the pseudo-element */
+    border-radius: 50%; /* Makes the pseudo-element a circle */
+    background-image: url(images/unchecked.png); /* Sets the background image of the pseudo-element */
+    background-size: cover; /* Ensures the background image covers the entire pseudo-element */
+    background-position: center; /* Centers the background image within the pseudo-element */
+    top: 12px; /* Positions the pseudo-element 12px from the top of the list item */
+    left: 8px; /* Positions the pseudo-element 8px from the left of the list item */
+}
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+ul li.checked::before{
+    background-image: url(images/checked.png);
+}
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+ul li span:hover{
+    background: #edeef0;
+}
